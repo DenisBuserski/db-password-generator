@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Generated Password</title>
+        <link rel="stylesheet" href="/css/style.css"/>
+        <meta charset="UTF-8">
+        <script th:src="@{/js/script.js}" defer></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <h2>Your Generated Password</h2>
+
+            <div th:if="${password}">
+                <p id="generatedPassword" class="generated-password">
+                    [[${password}]]
+                </p>
+                <button onclick="copyPassword()">Copy to Clipboard</button>
+
+                <!-- Temporary message area for success or error -->
+                <p id="copyMessage" class="copy-message">
+                    Copied to clipboard!
+                </p>
+            </div>
+
+            <div th:if="${error}">
+                <p class="error-message">[[${error}]]</p>
+            </div>
+
+            <a th:href="@{/}">
+                <button class="generate-another-btn">Generate Another</button>
+            </a>
+        </div>
+    </body>
+</html>
