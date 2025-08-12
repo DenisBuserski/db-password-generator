@@ -3,6 +3,7 @@
     <head>
         <title>Password Generator</title>
         <link rel="stylesheet" href="/css/style.css"/>
+        <link rel="icon" type="image/x-icon" href="/images/db-password-generator-icon-32x32.ico">
         <meta charset="UTF-8">
     </head>
 
@@ -12,7 +13,7 @@
 
             <form th:action="@{/password-generator/generate}"
                   th:method="post">
-                <label for="length">Password Length (10–50):</label>
+                <label for="length">Select Password Length (10–50):</label>
                 <input id="length"
                        type="number"
                        name="length"
